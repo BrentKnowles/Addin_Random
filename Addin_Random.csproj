@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D061CFA2-7B07-4A73-90EA-160E26C223CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Addin_Random</RootNamespace>
+    <AssemblyName>Addin_Random</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="mef_Addin_Random.cs" />
+    <Compile Include="dictionaryera.cs" />
+    <Compile Include="erabase.cs" />
+    <Compile Include="erarulelanguage.cs" />
+    <Compile Include="NamingCentralUserControl.cs" />
+    <Compile Include="NamingCentralUserControl.Designer.cs" />
+    <Compile Include="NamingFileClass.cs" />
+    <Compile Include="fNamer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="NetSpell.SpellChecker">
+      <HintPath>..\..\..\librariesused\netspell\src\NetSpell.SpellChecker\bin\Debug\NetSpell.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\yom2013B\MEF_Interfaces\MEF_Interfaces.csproj">
+      <Project>{2E366A51-224A-4C3B-90D6-FE8C81C9EB78}</Project>
+      <Name>MEF_Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\yom2013B\coreutilities\coreutilities2013.csproj">
+      <Project>{6EAA0B60-70E3-49FB-88E9-272D2719CECF}</Project>
+      <Name>coreutilities2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RulesEngine\RulesEngine.csproj">
+      <Project>{E00FF039-A404-4F7D-862B-1AB602C150BF}</Project>
+      <Name>RulesEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\yom2013B\Layout\Layout.csproj">
+      <Project>{DA1AA77A-D94D-4F79-AC96-7BC9AF0AFB34}</Project>
+      <Name>Layout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Addin_NetSpell\Addin_NetSpell.csproj">
+      <Project>{ACBCBE19-9467-4461-A45E-5E1BF018384A}</Project>
+      <Name>Addin_NetSpell</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\dictionary.era">
+      <LogicalName>dictionary.era</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
