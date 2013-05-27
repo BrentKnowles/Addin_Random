@@ -120,7 +120,7 @@ namespace Addin_Random
 //		}
 		public override string dependencyguid {
 			get {
-				//TODO remove. This does not need a dependency. Just testing
+
 				return "NetSpell";
 			}
 		}
